@@ -44,15 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 //    Button btn_km;
+    Button button;
 //    TextView num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         // use this setting to improve performance if you know that changes
@@ -70,12 +68,23 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-
-
-
-
         myDataset.add(new MyData(R.mipmap.mini,"얌얌축구장",R.mipmap.img,"3km","무료" ));
         myDataset.add(new MyData(R.mipmap.toystory,"랄랄라축구장",R.mipmap.img,"7km","무료"));
+        button=(Button)findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View v) {
+
+                Intent intent1=new Intent(MainActivity.this,detail_field.class);
+
+                startActivity(intent1);
+
+            }
+
+        });
 //
 //        btn_km=(Button)findViewById(R.id.km);
 //        num=(TextView)findViewById(R.id.num);
